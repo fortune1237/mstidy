@@ -47,7 +47,7 @@ const highlights = [
   { title: "Renovation Cleanup", service: "Post-Renovation Cleaning", type: "Renovated home or office", image: office, alt: "Illustrative refreshed office interior", description: "Renovation can leave dust and marks in easily overlooked places. Attention to finishing details helps prepare the renovated space for its next use.", scope: ["Post-renovation dust removal", "Fixtures and glass detailing", "Finishing surface clean"] },
   { title: "Property Transition Service", service: "Move-In / Move-Out Cleaning", type: "Residential property transition", image: null, alt: "Cleaning supplies arranged in a bucket", description: "A thorough property transition clean helps prepare a home for an incoming occupant or leave it presentable after a tenancy ends.", scope: ["Frequently used spaces", "Floors and accessible surfaces", "Property handover preparation"] },
   { title: "Detailed Property Cleaning", service: "Deep Cleaning", type: "Residential or commercial property", image: windowAsset.url, alt: "Gloved hands detailing glass with a spray and cloth", description: "When routine cleaning is not enough, a detailed clean gives extra attention to corners, surfaces, fixtures and frequently used spaces.", scope: ["Corners and finishing details", "Fixtures and surface care", "Glass and window cleaning"] },
-  { title: "Property Fumigation", service: "Fumigation Services", type: "Residential or commercial property", image: mopAsset.url, alt: "Mop in a bucket of soapy water, illustrating general property care, not pest treatment", description: "Where pest treatment is required, fumigation can form part of a property's preparation plan, based on the specific needs of the premises.", scope: ["Review of identified pest concerns", "Property-specific treatment planning", "Preparation and re-entry guidance"] },
+  { title: "Property Fumigation", service: "Fumigation Services", type: "Residential or commercial property", image: fumigation, alt: "Pest-control technician in protective gear fogging an empty apartment room", description: "Where pest treatment is required, fumigation can form part of a property's preparation plan, based on the specific needs of the premises.", scope: ["Review of identified pest concerns", "Property-specific treatment planning", "Preparation and re-entry guidance"] },
 ];
 
 function Index() {
@@ -150,7 +150,6 @@ function Index() {
                  {p.image ? (
                   <figure>
                     <img src={p.image} alt={p.alt} loading="lazy" className="aspect-[3/2] w-full object-cover" />
-                    <figcaption className="mt-3 text-xs text-muted-foreground">{i === 4 ? "Illustrative cleaning photo · Not a fumigation procedure" : "Illustrative image · Not a verified MsTidy project"}</figcaption>
                   </figure>
                 ) : (
                   <div className="flex aspect-[3/2] w-full flex-col justify-end border border-border bg-secondary p-6">
