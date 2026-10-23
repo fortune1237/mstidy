@@ -6,6 +6,9 @@ import { QuoteForm } from "@/components/QuoteForm";
 import hero from "@/assets/hero.jpg";
 import work from "@/assets/work.jpg";
 import office from "@/assets/office.jpg";
+import mopAsset from "@/assets/mstidy-mop.png.asset.json";
+import windowAsset from "@/assets/mstidy-window-detail.jpg.asset.json";
+import toolsAsset from "@/assets/mstidy-cleaning-tools.jpg.asset.json";
 
 const TITLE = "MsTidy Abuja — Post-Construction & Property Turnover Cleaning";
 const DESC =
@@ -38,6 +41,14 @@ const steps = [
   ["Site assessment", "We review the scope and agree a plan and timeline."],
   ["Meticulous clean", "Our team cleans, details and fumigates as required."],
   ["Move-in ready", "A final walkthrough so the space is ready for occupancy."],
+];
+
+const highlights = [
+  { title: "Residential Property Preparation", service: "Post-Construction Cleaning", type: "Newly completed residential property", image: hero, alt: "Illustrative newly finished living room", description: "After construction, fine dust and residue can remain throughout a property. A detailed clean focuses on floors, surfaces and windows to prepare the space for occupancy.", scope: ["Fine-dust and residue removal", "Floor and surface care", "Window detailing"] },
+  { title: "Renovation Cleanup", service: "Post-Renovation Cleaning", type: "Renovated home or office", image: office, alt: "Illustrative refreshed office interior", description: "Renovation can leave dust and marks in easily overlooked places. Attention to finishing details helps prepare the renovated space for its next use.", scope: ["Post-renovation dust removal", "Fixtures and glass detailing", "Finishing surface clean"] },
+  { title: "Property Transition Service", service: "Move-In / Move-Out Cleaning", type: "Residential property transition", image: toolsAsset.url, alt: "Cleaning supplies arranged in a bucket", description: "A thorough property transition clean helps prepare a home for an incoming occupant or leave it presentable after a tenancy ends.", scope: ["Frequently used spaces", "Floors and accessible surfaces", "Property handover preparation"] },
+  { title: "Detailed Property Cleaning", service: "Deep Cleaning", type: "Residential or commercial property", image: windowAsset.url, alt: "Gloved hands detailing glass with a spray and cloth", description: "When routine cleaning is not enough, a detailed clean gives extra attention to corners, surfaces, fixtures and frequently used spaces.", scope: ["Corners and finishing details", "Fixtures and surface care", "Glass and window cleaning"] },
+  { title: "Property Fumigation", service: "Fumigation Services", type: "Residential or commercial property", image: mopAsset.url, alt: "Mop in a bucket of soapy water, illustrating general property care, not pest treatment", description: "Where pest treatment is required, fumigation can form part of a property's preparation plan, based on the specific needs of the premises.", scope: ["Review of identified pest concerns", "Property-specific treatment planning", "Preparation and re-entry guidance"] },
 ];
 
 function Index() {
@@ -131,12 +142,31 @@ function Index() {
 
       <section id="portfolio" className="border-t border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
-          <p className="text-xs font-semibold uppercase text-muted-foreground">Portfolio concepts</p>
-          <h2 className="mt-4 text-4xl md:text-5xl">A fresh start for every space.</h2>
-          <p className="mt-5 max-w-2xl text-muted-foreground">Illustrative project scenarios and generated images, not completed MsTidy projects.</p>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            {[{image: hero, title: 'Residential handover', service: 'Post-construction cleaning', detail: 'An example scope: fine-dust removal, floor care, window detailing and surface cleaning before occupancy.'}, {image: office, title: 'Office refresh', service: 'Post-renovation cleaning', detail: 'An example scope: detailed cleaning of workspaces, glass partitions, fixtures and floors after renovation.'}].map(p => <article key={p.title}><img src={p.image} alt={`Illustrative ${p.title.toLowerCase()} concept`} width={1200} height={800} loading="lazy" className="aspect-[3/2] w-full object-cover" /><p className="mt-5 text-xs uppercase text-muted-foreground">{p.service} · Illustrative concept</p><h3 className="mt-2 text-3xl">{p.title}</h3><p className="mt-3 text-muted-foreground">{p.detail}</p></article>)}
-          </div>
+           <p className="text-xs font-semibold uppercase text-muted-foreground">How we help</p>
+           <h2 className="mt-4 text-4xl md:text-5xl">Our Services in Action</h2>
+           <p className="mt-5 max-w-2xl text-muted-foreground">Five example scopes for preparing your property for its next chapter. These are illustrative service highlights, not completed MsTidy projects or customer testimonials. Photos illustrate spaces and general cleaning, not verified project results.</p>
+           <div className="mt-12 grid gap-x-10 gap-y-14 md:grid-cols-2">
+             {highlights.map((p, i) => (
+               <article key={p.title} className="min-w-0 border-b border-border pb-8">
+                 <figure>
+                   <img src={p.image} alt={p.alt} loading="lazy" className="aspect-[3/2] w-full object-cover" />
+                   <figcaption className="mt-3 text-xs text-muted-foreground">{i === 4 ? "Illustrative cleaning photo · Not a fumigation procedure" : "Illustrative image · Not a verified MsTidy project"}</figcaption>
+                 </figure>
+                 <div className="mt-6 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
+                   <span className="font-display text-3xl text-brass">{String(i + 1).padStart(2, "0")}</span>
+                   <div className="min-w-0">
+                     <p className="text-xs font-semibold uppercase text-muted-foreground">{p.service}</p>
+                     <h3 className="mt-2 break-words text-3xl">{p.title}</h3>
+                     <p className="mt-3 text-sm text-muted-foreground">{p.type}</p>
+                   </div>
+                 </div>
+                 <p className="mt-5 leading-relaxed text-muted-foreground">{p.description}</p>
+                 <p className="mt-6 text-xs font-semibold uppercase">Example scope</p>
+                 <ul className="mt-3 grid gap-2 text-sm text-muted-foreground">{p.scope.map(item => <li key={item} className="border-l-2 border-brass pl-3">{item}</li>)}</ul>
+                 <Button asChild variant="link" className="mt-5 h-auto p-0"><a href="#quote">Discuss a similar property<ArrowUpRight className="size-4" /></a></Button>
+               </article>
+             ))}
+           </div>
         </div>
       </section>
       <section id="quote" className="bg-secondary">
