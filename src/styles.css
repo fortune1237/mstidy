@@ -146,5 +146,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
-  h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+  section { scroll-margin-top: 2rem; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 }
