@@ -151,3 +151,54 @@
   section { scroll-margin-top: 2rem; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 }
+
+/* ============ Scroll reveal (portfolio) ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Images settle from a gentle zoom when their card reveals */
+.reveal .portfolio-img {
+  transform: scale(1.1);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible .portfolio-img {
+  transform: scale(1);
+}
+
+/* Example-scope items cascade in after the card lands */
+.reveal .portfolio-scope li {
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.is-visible .portfolio-scope li { opacity: 1; transform: none; }
+.reveal.is-visible .portfolio-scope li:nth-child(1) { transition-delay: 350ms; }
+.reveal.is-visible .portfolio-scope li:nth-child(2) { transition-delay: 450ms; }
+.reveal.is-visible .portfolio-scope li:nth-child(3) { transition-delay: 550ms; }
+
+/* Hover: photo eases closer, link arrow slides */
+.reveal.is-visible:hover .portfolio-img { transform: scale(1.05); }
+.portfolio-link .lucide-arrow-up-right { transition: transform 0.3s ease; }
+.portfolio-link:hover .lucide-arrow-up-right { transform: translate(2px, -2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal .portfolio-img,
+  .reveal .portfolio-scope li {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
