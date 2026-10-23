@@ -6,7 +6,7 @@ import { QuoteForm } from "@/components/QuoteForm";
 import hero from "@/assets/hero.jpg";
 import work from "@/assets/work.jpg";
 import office from "@/assets/office.jpg";
-import mopAsset from "@/assets/mstidy-mop.png.asset.json";
+import fumigation from "@/assets/mstidy-fumigation.jpg";
 import windowAsset from "@/assets/mstidy-window-detail.jpg.asset.json";
 
 const TITLE = "MsTidy Abuja — Post-Construction & Property Turnover Cleaning";
