@@ -143,7 +143,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
            <p className="text-xs font-semibold uppercase text-muted-foreground">How we help</p>
            <h2 className="mt-4 text-4xl md:text-5xl">Our Services in Action</h2>
-           <p className="mt-5 max-w-2xl text-muted-foreground">Five example scopes for preparing your property for its next chapter. These are illustrative service highlights, not completed MsTidy projects or customer testimonials. Photos illustrate spaces and general cleaning, not verified project results.</p>
+           <p className="mt-5 max-w-2xl text-muted-foreground">Five example scopes for preparing your property for its next chapter.</p>
            <div className="mt-12 grid gap-x-10 gap-y-14 md:grid-cols-2">
              {highlights.map((p, i) => (
                <article key={p.title} className="min-w-0 border-b border-border pb-8">
