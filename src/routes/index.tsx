@@ -8,6 +8,7 @@ import hero from "@/assets/hero.jpg";
 import work from "@/assets/work.jpg";
 import office from "@/assets/office.jpg";
 import fumigation from "@/assets/mstidy-fumigation.jpg";
+import moveIn from "@/assets/mstidy-movein.jpg";
 import windowAsset from "@/assets/mstidy-window-detail.jpg.asset.json";
 
 const TITLE = "MsTidy Abuja — Post-Construction & Property Turnover Cleaning";
@@ -46,7 +47,7 @@ const steps = [
 const highlights = [
   { title: "Residential Property Preparation", service: "Post-Construction Cleaning", type: "Newly completed residential property", image: hero, alt: "Illustrative newly finished living room", description: "After construction, fine dust and residue can remain throughout a property. A detailed clean focuses on floors, surfaces and windows to prepare the space for occupancy.", scope: ["Fine-dust and residue removal", "Floor and surface care", "Window detailing"] },
   { title: "Renovation Cleanup", service: "Post-Renovation Cleaning", type: "Renovated home or office", image: office, alt: "Illustrative refreshed office interior", description: "Renovation can leave dust and marks in easily overlooked places. Attention to finishing details helps prepare the renovated space for its next use.", scope: ["Post-renovation dust removal", "Fixtures and glass detailing", "Finishing surface clean"] },
-  { title: "Property Transition Service", service: "Move-In / Move-Out Cleaning", type: "Residential property transition", image: null, alt: "Cleaning supplies arranged in a bucket", description: "A thorough property transition clean helps prepare a home for an incoming occupant or leave it presentable after a tenancy ends.", scope: ["Frequently used spaces", "Floors and accessible surfaces", "Property handover preparation"] },
+  { title: "Property Transition Service", service: "Move-In / Move-Out Cleaning", type: "Residential property transition", image: moveIn, alt: "Freshly cleaned empty apartment with a set of keys resting on a windowsill", description: "A thorough property transition clean helps prepare a home for an incoming occupant or leave it presentable after a tenancy ends.", scope: ["Frequently used spaces", "Floors and accessible surfaces", "Property handover preparation"] },
   { title: "Detailed Property Cleaning", service: "Deep Cleaning", type: "Residential or commercial property", image: windowAsset.url, alt: "Gloved hands detailing glass with a spray and cloth", description: "When routine cleaning is not enough, a detailed clean gives extra attention to corners, surfaces, fixtures and frequently used spaces.", scope: ["Corners and finishing details", "Fixtures and surface care", "Glass and window cleaning"] },
   { title: "Property Fumigation", service: "Fumigation Services", type: "Residential or commercial property", image: fumigation, alt: "Pest-control technician in protective gear fogging an empty apartment room", description: "Where pest treatment is required, fumigation can form part of a property's preparation plan, based on the specific needs of the premises.", scope: ["Review of identified pest concerns", "Property-specific treatment planning", "Preparation and re-entry guidance"] },
 ];
