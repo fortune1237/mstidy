@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteForm } from "@/components/QuoteForm";
+import { Reveal } from "@/components/Reveal";
 import hero from "@/assets/hero.jpg";
 import work from "@/assets/work.jpg";
 import office from "@/assets/office.jpg";
@@ -141,18 +142,21 @@ function Index() {
 
       <section id="portfolio" className="border-t border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
-           <p className="text-xs font-semibold uppercase text-muted-foreground">How we help</p>
-           <h2 className="mt-4 text-4xl md:text-5xl">Our Services in Action</h2>
-           <p className="mt-5 max-w-2xl text-muted-foreground">Five example scopes for preparing your property for its next chapter.</p>
+           <Reveal>
+             <p className="text-xs font-semibold uppercase text-muted-foreground">How we help</p>
+             <h2 className="mt-4 text-4xl md:text-5xl">Our Services in Action</h2>
+             <p className="mt-5 max-w-2xl text-muted-foreground">Five example scopes for preparing your property for its next chapter.</p>
+           </Reveal>
            <div className="mt-12 grid gap-x-10 gap-y-14 md:grid-cols-2">
              {highlights.map((p, i) => (
-               <article key={p.title} className="min-w-0 border-b border-border pb-8">
+               <Reveal key={p.title} delay={(i % 2) * 150} className="min-w-0">
+               <article className="border-b border-border pb-8">
                  {p.image ? (
                   <figure>
-                    <img src={p.image} alt={p.alt} loading="lazy" className="aspect-[3/2] w-full object-cover" />
+                    <img src={p.image} alt={p.alt} loading="lazy" className="portfolio-img aspect-[3/2] w-full object-cover" />
                   </figure>
                 ) : (
-                  <div className="flex aspect-[3/2] w-full flex-col justify-end border border-border bg-secondary p-6">
+                  <div className="portfolio-img flex aspect-[3/2] w-full flex-col justify-end border border-border bg-secondary p-6">
                     <p className="text-xs font-semibold uppercase text-muted-foreground">Illustrative service highlight</p>
                     <p className="mt-2 font-display text-2xl leading-tight">{p.service}</p>
                   </div>
@@ -167,9 +171,10 @@ function Index() {
                  </div>
                  <p className="mt-5 leading-relaxed text-muted-foreground">{p.description}</p>
                  <p className="mt-6 text-xs font-semibold uppercase">Example scope</p>
-                 <ul className="mt-3 grid gap-2 text-sm text-muted-foreground">{p.scope.map(item => <li key={item} className="border-l-2 border-brass pl-3">{item}</li>)}</ul>
-                 <Button asChild variant="link" className="mt-5 h-auto p-0"><a href="#quote">Discuss a similar property<ArrowUpRight className="size-4" /></a></Button>
+                  <ul className="portfolio-scope mt-3 grid gap-2 text-sm text-muted-foreground">{p.scope.map(item => <li key={item} className="border-l-2 border-brass pl-3">{item}</li>)}</ul>
+                 <Button asChild variant="link" className="portfolio-link mt-5 h-auto p-0"><a href="#quote">Discuss a similar property<ArrowUpRight className="size-4" /></a></Button>
                </article>
+               </Reveal>
              ))}
            </div>
         </div>
