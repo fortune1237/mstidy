@@ -8,6 +8,13 @@
       "when": 1792755324695,
       "tag": "0000_create_private_quote_requests",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1793116333463,
+      "tag": "0001_owner_dashboard",
+      "breakpoints": true
     }
   ]
 }
