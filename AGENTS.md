@@ -13,3 +13,5 @@
 - Submission UUIDs are unique and reused on retries to prevent duplicate enquiries after interrupted responses.
 - Owner emails use Lovable managed sending only after an owned sender domain is configured and verified; never simulate delivery or create email queues.
 - Non-authentic portfolio imagery and scenarios must be explicitly labelled illustrative and never represented as completed client work.
+
+- Owner dashboard (/dashboard) reads quote_requests from the browser under RLS; only users with the admin role in user_roles can read/update, and admin is auto-granted by a trigger when the owner business email is confirmed — keeps enquiries private without server-side admin reads.
