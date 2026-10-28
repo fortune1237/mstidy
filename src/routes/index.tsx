@@ -114,7 +114,7 @@ function Index() {
 
       <section id="about" className="bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-28 md:grid-cols-2">
-          <figure><img src={work} alt="Illustrative image of a cleaner detailing a window" loading="lazy" width={1200} height={1408} className="aspect-[4/5] w-full rounded-sm object-cover" /></figure>
+          <figure><img src={work} alt="Illustrative image of a cleaner detailing a window" loading="lazy" width={928} height={1152} className="aspect-[4/5] w-full rounded-sm object-cover" /></figure>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brass">About MsTidy</p>
             <h2 className="mt-5 text-4xl md:text-5xl">Detail is the whole job.</h2>
