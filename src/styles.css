@@ -22,6 +22,7 @@
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Manrope", system-ui, sans-serif;
   --color-brass: var(--brass);
+  --color-tagline: var(--tagline);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -81,6 +82,7 @@
   --accent: oklch(0.74 0.11 75);
   --accent-foreground: oklch(0.22 0.04 160);
   --brass: oklch(0.74 0.11 75);
+  --tagline: oklch(0.86 0.09 165);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.86 0.02 85);
