@@ -7,9 +7,8 @@ import { Reveal } from "@/components/Reveal";
 import hero from "@/assets/hero.jpg";
 import work from "@/assets/work.jpg";
 import office from "@/assets/office.jpg";
-import fumigation from "@/assets/mstidy-fumigation.jpg";
-import moveIn from "@/assets/mstidy-movein.jpg";
-import windowAsset from "@/assets/mstidy-window-detail.jpg.asset.json";
+import relocation from "@/assets/mstidy-relocation.jpg";
+import estate from "@/assets/mstidy-estate.jpg";
 
 const TITLE = "MsTidy Abuja — Post-Construction & Property Turnover Cleaning";
 const DESC =
@@ -44,12 +43,24 @@ const steps = [
   ["Move-in ready", "A final walkthrough so the space is ready for occupancy."],
 ];
 
-const highlights = [
-  { title: "Residential Property Preparation", service: "Post-Construction Cleaning", type: "Newly completed residential property", image: hero, alt: "Illustrative newly finished living room", description: "After construction, fine dust and residue can remain throughout a property. A detailed clean focuses on floors, surfaces and windows to prepare the space for occupancy.", scope: ["Fine-dust and residue removal", "Floor and surface care", "Window detailing"] },
-  { title: "Renovation Cleanup", service: "Post-Renovation Cleaning", type: "Renovated home or office", image: office, alt: "Illustrative refreshed office interior", description: "Renovation can leave dust and marks in easily overlooked places. Attention to finishing details helps prepare the renovated space for its next use.", scope: ["Post-renovation dust removal", "Fixtures and glass detailing", "Finishing surface clean"] },
-  { title: "Property Transition Service", service: "Move-In / Move-Out Cleaning", type: "Residential property transition", image: moveIn, alt: "Freshly cleaned empty apartment with a set of keys resting on a windowsill", description: "A thorough property transition clean helps prepare a home for an incoming occupant or leave it presentable after a tenancy ends.", scope: ["Frequently used spaces", "Floors and accessible surfaces", "Property handover preparation"] },
-  { title: "Detailed Property Cleaning", service: "Deep Cleaning", type: "Residential or commercial property", image: windowAsset.url, alt: "Gloved hands detailing glass with a spray and cloth", description: "When routine cleaning is not enough, a detailed clean gives extra attention to corners, surfaces, fixtures and frequently used spaces.", scope: ["Corners and finishing details", "Fixtures and surface care", "Glass and window cleaning"] },
-  { title: "Property Fumigation", service: "Fumigation Services", type: "Residential or commercial property", image: fumigation, alt: "Pest-control technician in protective gear fogging an empty apartment room", description: "Where pest treatment is required, fumigation can form part of a property's preparation plan, based on the specific needs of the premises.", scope: ["Review of identified pest concerns", "Property-specific treatment planning", "Preparation and re-entry guidance"] },
+const pillars = [
+  { n: "01", title: "Specialised Cleaning Services", tag: "Post-construction · Post-renovation · Transition", intro: "Specialised cleaning for residential and commercial properties, addressing construction residue, renovation debris and accumulated dirt to prepare properties for inspection, occupation, business operations, presentation or handover.", image: hero, alt: "Newly finished living room after detailed post-construction cleaning", items: [
+    ["Post-Construction Detailing", "Removal of construction dust, cement and plaster residue, paint splashes, adhesive deposits and protective coverings, with detailed cleaning of floors, walls, windows, doors, fixtures and fittings ready for inspection and final handover."],
+    ["Post-Renovation Detailing", "Removal of renovation dust, paint marks, adhesive residue, protective coverings and debris from surfaces, fixtures and fittings, restoring renovated spaces for occupation or continued use."],
+    ["Property Transition Detailing", "Detailed cleaning before or after occupancy, tenancy changes, sales, leases or facility handovers, preparing interiors for incoming occupants, tenants, owners or business operations."],
+  ] },
+  { n: "02", title: "Relocation Concierge", tag: "Household · Office · Business moves", intro: "Coordinated relocation for residential and commercial clients, handling the move through organised planning, careful packing, transportation and unpacking support.", image: relocation, alt: "Two movers carefully carrying wrapped furniture and boxes into an apartment", items: [
+    ["Move Planning & Coordination", "An assessment of moving requirements, followed by scheduling, packing arrangements, logistics and coordination of every stage for an orderly, efficient relocation."],
+    ["Packing & Transportation", "Professional packing, wrapping, handling and transport of belongings, furniture, office contents and equipment from departure to destination."],
+    ["Unpacking & Setup Support", "Unpacking, placement and organisation of belongings and furniture at the destination, helping you settle into new premises efficiently."],
+  ] },
+  { n: "03", title: "Estate & Common-Area Cleaning", tag: "Residential estates · Commercial complexes", intro: "Structured routine, scheduled and periodic intensive cleaning that helps property and facility managers keep shared environments clean, organised and presentable.", image: estate, alt: "Clean, well-swept internal road of a residential estate with clear gutters", items: [
+    ["Estate Road & Street Cleaning", "Routine sweeping of internal roads, streets, pathways and outdoor areas, removing litter, leaves, dirt and visible waste."],
+    ["Drainage & Gutter Cleaning", "Clearing silt, leaves and debris from drains and gutters to minimise blockages, stagnant water and flooding risk, especially in the rainy season."],
+    ["Communal-Area Cleaning", "Sweeping, mopping, dusting and surface cleaning of entrances, walkways, lobbies, corridors, stairwells and communal halls."],
+    ["Refuse Collection-Point Cleaning", "Removal of scattered waste, surface cleaning and deodorisation of bin stations to manage odours and minimise pest activity."],
+    ["Periodic Deep Cleaning", "Scheduled intensive cleaning of floors, glass, fixtures and communal facilities that need attention beyond routine maintenance."],
+  ] },
 ];
 
 function Index() {
@@ -143,41 +154,37 @@ function Index() {
 
       <section id="portfolio" className="border-t border-border">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
-           <Reveal>
-             <p className="text-xs font-semibold uppercase text-muted-foreground">How we help</p>
-             <h2 className="mt-4 text-4xl md:text-5xl">Our Services in Action</h2>
-             <p className="mt-5 max-w-2xl text-muted-foreground">Five example scopes for preparing your property for its next chapter.</p>
-           </Reveal>
-           <div className="mt-12 grid gap-x-10 gap-y-14 md:grid-cols-2">
-             {highlights.map((p, i) => (
-               <Reveal key={p.title} delay={(i % 2) * 150} className="min-w-0">
-               <article className="border-b border-border pb-8">
-                 {p.image ? (
-                  <figure>
-                    <img src={p.image} alt={p.alt} loading="lazy" className="portfolio-img aspect-[3/2] w-full object-cover" />
+          <Reveal>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brass">Our core: Specialised Cleaning</p>
+            <h2 className="mt-4 max-w-3xl text-4xl md:text-5xl">Our Services in Action</h2>
+            <p className="mt-5 max-w-2xl text-muted-foreground">Built on specialised cleaning, MsTidy delivers three independent service lines for residential and commercial properties — each available on its own.</p>
+          </Reveal>
+          <div className="mt-14 grid gap-20 md:gap-28">
+            {pillars.map((p, i) => (
+              <Reveal key={p.n} className="min-w-0">
+                <article className="grid items-start gap-10 md:grid-cols-2 md:gap-14">
+                  <figure className={`overflow-hidden md:sticky md:top-8 ${i % 2 ? "md:order-2" : ""}`}>
+                    <img src={p.image} alt={p.alt} loading="lazy" width={1200} height={800} className="portfolio-img aspect-[3/2] w-full object-cover" />
                   </figure>
-                ) : (
-                  <div className="portfolio-img flex aspect-[3/2] w-full flex-col justify-end border border-border bg-secondary p-6">
-                    <p className="text-xs font-semibold uppercase text-muted-foreground">Illustrative service highlight</p>
-                    <p className="mt-2 font-display text-2xl leading-tight">{p.service}</p>
+                  <div className="min-w-0">
+                    <span className="font-display text-5xl text-brass">{p.n}</span>
+                    <p className="mt-4 text-xs font-semibold uppercase text-muted-foreground">{p.tag}</p>
+                    <h3 className="mt-2 break-words text-3xl md:text-4xl">{p.title}</h3>
+                    <p className="mt-4 leading-relaxed text-muted-foreground">{p.intro}</p>
+                    <ul className="portfolio-scope mt-8 grid gap-6">
+                      {p.items.map(([t, d]) => (
+                        <li key={t} className="border-l-2 border-brass pl-4">
+                          <h4 className="font-display text-xl">{t}</h4>
+                          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{d}</p>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button asChild variant="link" className="portfolio-link mt-6 h-auto p-0"><a href="#quote">Discuss {p.title.toLowerCase()}<ArrowUpRight className="size-4" /></a></Button>
                   </div>
-                )}
-                 <div className="mt-6 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-4">
-                   <span className="font-display text-3xl text-brass">{String(i + 1).padStart(2, "0")}</span>
-                   <div className="min-w-0">
-                     <p className="text-xs font-semibold uppercase text-muted-foreground">{p.service}</p>
-                     <h3 className="mt-2 break-words text-3xl">{p.title}</h3>
-                     <p className="mt-3 text-sm text-muted-foreground">{p.type}</p>
-                   </div>
-                 </div>
-                 <p className="mt-5 leading-relaxed text-muted-foreground">{p.description}</p>
-                 <p className="mt-6 text-xs font-semibold uppercase">Example scope</p>
-                  <ul className="portfolio-scope mt-3 grid gap-2 text-sm text-muted-foreground">{p.scope.map(item => <li key={item} className="border-l-2 border-brass pl-3">{item}</li>)}</ul>
-                 <Button asChild variant="link" className="portfolio-link mt-5 h-auto p-0"><a href="#quote">Discuss a similar property<ArrowUpRight className="size-4" /></a></Button>
-               </article>
-               </Reveal>
-             ))}
-           </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
       <section id="quote" className="bg-secondary">
