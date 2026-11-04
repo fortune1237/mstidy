@@ -12,7 +12,7 @@ import estate from "@/assets/mstidy-estate.jpg";
 
 const TITLE = "MsTidy Abuja — Post-Construction & Property Turnover Cleaning";
 const DESC =
-  "MsTidy provides premium post-construction, renovation, property transition, deep cleaning and fumigation across FCT, Abuja. Request a tailored quote.";
+  "MsTidy provides premium post-construction, renovation, property transition cleaning and fumigation for residential and commercial properties across FCT, Abuja. Request a tailored quote.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -128,7 +128,7 @@ function Index() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brass">About MsTidy</p>
             <h2 className="mt-5 text-4xl md:text-5xl">Detail is the whole job.</h2>
-            <p className="mt-6 text-lg opacity-85">MsTidy is a premium property cleaning company specializing in post-construction, post-renovation, and property transition cleaning services. We help homeowners and businesses prepare newly built, renovated, and transitioning properties for occupancy through detailed cleaning, deep cleaning, and fumigation services. Our commitment to professionalism, reliability, quality, and attention to detail ensures clean, hygienic, refreshed, and move-in-ready spaces.</p>
+            <p className="mt-6 text-lg opacity-85">MsTidy is a premium property cleaning company specializing in post-construction, post-renovation, and property transition cleaning services. We help homeowners and businesses prepare newly built, renovated, and transitioning properties for occupancy through detailed cleaning and fumigation services. Our commitment to professionalism, reliability, quality, and attention to detail ensures clean, hygienic, refreshed, and move-in-ready spaces.</p>
             <ul className="mt-10 grid grid-cols-2 gap-6">
               {["Professionalism", "Reliability", "Quality", "Attention to detail"].map((v) => (
                 <li key={v} className="border-l-2 border-brass pl-4 font-display text-xl">{v}</li>
