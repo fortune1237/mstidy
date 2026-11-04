@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const serviceNames = ['Post-Construction Cleaning', 'Post-Renovation Cleaning', 'Property Transition Cleaning (Move-In/Move-Out)', 'Deep Cleaning', 'Fumigation Services'] as const;
+export const serviceNames = ['Post-Construction Cleaning', 'Post-Renovation Cleaning', 'Property Transition Cleaning (Move-In/Move-Out)', 'Fumigation Services'] as const;
 export const propertyTypes = ['Apartment', 'House', 'Office', 'Commercial property', 'Other'] as const;
 export const quoteSchema = z.object({
   name: z.string().trim().min(1, 'Please enter your name.').max(100),

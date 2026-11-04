@@ -3,7 +3,7 @@ import { filterQuotes, toCsv, winRate, type QuoteRow } from "./quote-stats";
 
 const row = (o: Partial<QuoteRow>): QuoteRow => ({
   id: "1", created_at: "2026-10-01T00:00:00Z", name: "Ada", phone: "+234", email: "a@x.com",
-  property_location: "Wuse", service: "Deep Cleaning", property_type: "House", preferred_date: "2026-11-01",
+  property_location: "Wuse", service: "Post-Renovation Cleaning", property_type: "House", preferred_date: "2026-11-01",
   description: "Full clean", status: "new", notes: null, ...o,
 });
 

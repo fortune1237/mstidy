@@ -8,7 +8,7 @@ describe('Quote requirements', () => {
       expect(quoteSchema.safeParse({ ...valid, [key]: '' }).success).toBe(false);
     }
   });
-  it('offers exactly the five supplied services', () => expect(serviceNames).toEqual(['Post-Construction Cleaning','Post-Renovation Cleaning','Property Transition Cleaning (Move-In/Move-Out)','Deep Cleaning','Fumigation Services']));
+  it('offers exactly the four offered services', () => expect(serviceNames).toEqual(['Post-Construction Cleaning','Post-Renovation Cleaning','Property Transition Cleaning (Move-In/Move-Out)','Fumigation Services']));
   it('rejects submissions without privacy consent', () => expect(quoteSchema.safeParse({ ...valid, privacy_consent: false }).success).toBe(false));
   it('rejects the spam trap', () => expect(quoteSchema.safeParse({ ...valid, website: 'spam' }).success).toBe(false));
   it('rejects invalid calendar dates', () => expect(quoteSchema.safeParse({ ...valid, preferred_date: '2026-02-31' }).success).toBe(false));

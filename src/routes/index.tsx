@@ -29,11 +29,10 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { n: "01", t: "Post-Construction Cleaning", d: "Removal of dust, debris, paint splatter and residue so newly built spaces are ready for handover." },
-  { n: "02", t: "Post-Renovation Cleaning", d: "Detailed cleaning after remodels — fixtures, surfaces, floors and fine dust in every corner." },
+  { n: "01", t: "Post-Construction Cleaning", d: "Removal of dust, debris, paint splatter and residue so newly built residential and commercial spaces are ready for handover." },
+  { n: "02", t: "Post-Renovation Cleaning", d: "Detailed cleaning after remodels of homes and business premises — fixtures, surfaces, floors and fine dust in every corner." },
   { n: "03", t: "Property Transition Cleaning (Move-In/Move-Out)", d: "Property transition cleaning that leaves homes and offices fresh for the next occupant." },
-  { n: "04", t: "Deep Cleaning", d: "Top-to-bottom, inside-and-out cleaning for residential and commercial properties." },
-  { n: "05", t: "Fumigation Services", d: "Pest treatment tailored to the property and identified pest concerns, with preparation and re-entry guidance." },
+  { n: "04", t: "Fumigation Services", d: "Pest treatment for residential and commercial properties, tailored to the property and identified pest concerns, with preparation and re-entry guidance." },
 ];
 
 const steps = [
@@ -59,7 +58,7 @@ const pillars = [
     ["Drainage & Gutter Cleaning", "Clearing silt, leaves and debris from drains and gutters to minimise blockages, stagnant water and flooding risk, especially in the rainy season."],
     ["Communal-Area Cleaning", "Sweeping, mopping, dusting and surface cleaning of entrances, walkways, lobbies, corridors, stairwells and communal halls."],
     ["Refuse Collection-Point Cleaning", "Removal of scattered waste, surface cleaning and deodorisation of bin stations to manage odours and minimise pest activity."],
-    ["Periodic Deep Cleaning", "Scheduled intensive cleaning of floors, glass, fixtures and communal facilities that need attention beyond routine maintenance."],
+    ["Periodic Intensive Cleaning", "Scheduled intensive cleaning of floors, glass, fixtures and communal facilities that need attention beyond routine maintenance."],
   ] },
 ];
 
@@ -92,10 +91,10 @@ function Index() {
         <img src={hero} alt="Spotless newly finished living room" width={1600} height={1104} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/20" />
         <div className="relative mx-auto w-full max-w-7xl px-5 pb-12 text-primary-foreground md:px-6 md:pb-16">
-          <p className="mb-4 text-xs font-semibold uppercase text-brass">Post-Construction & Property Turnover Specialists</p>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-tagline">Post-Construction & Property Turnover Specialists</p>
           <h1 className="text-6xl leading-tight md:text-7xl">MsTidy<span className="text-brass">.</span></h1>
           <p className="mt-4 max-w-3xl font-display text-3xl leading-tight md:text-5xl">From construction dust to <em className="text-brass">move-in ready.</em></p>
-          <p className="mt-5 max-w-xl text-base opacity-90 md:text-lg">Premium cleaning for newly built, renovated and transitioning properties across FCT, Abuja.</p>
+          <p className="mt-5 max-w-xl text-base opacity-90 md:text-lg">Premium cleaning for newly built, renovated and transitioning residential and commercial properties across FCT, Abuja.</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Button asChild size="lg" className="h-12 bg-accent text-accent-foreground hover:bg-accent/90"><a href="#quote">Request a free quote<ArrowUpRight /></a></Button>
             <Button asChild size="lg" variant="ghost" className="h-12 border border-primary-foreground/40"><a href="#services">Our services</a></Button>
