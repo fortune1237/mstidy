@@ -27,6 +27,7 @@ export type Database = {
           privacy_consent: boolean
           property_location: string
           property_type: string
+          quotation: Json | null
           service: string
           status: string
           submission_key: string
@@ -43,6 +44,7 @@ export type Database = {
           privacy_consent: boolean
           property_location: string
           property_type: string
+          quotation?: Json | null
           service: string
           status?: string
           submission_key: string
@@ -59,6 +61,7 @@ export type Database = {
           privacy_consent?: boolean
           property_location?: string
           property_type?: string
+          quotation?: Json | null
           service?: string
           status?: string
           submission_key?: string

@@ -15,6 +15,13 @@
       "when": 1793116333463,
       "tag": "0001_owner_dashboard",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793801015493,
+      "tag": "0002_quote_quotation",
+      "breakpoints": true
     }
   ]
 }
