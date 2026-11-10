@@ -6,6 +6,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { serviceNames } from "@/lib/quote-schema";
+import { QuotationBuilder } from "@/components/QuotationBuilder";
+import { naira, rateHistory, serviceInsights, type Quotation } from "@/lib/quotation";
 import { countBy, filterQuotes, monthly, quoteStatuses, toCsv, winRate, type QuoteRow } from "@/lib/quote-stats";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
@@ -45,13 +47,20 @@ function Dashboard() {
     queryFn: async () => {
       const { data, error } = await supabase.from("quote_requests").select("*").order("created_at", { ascending: false });
       if (error) throw error;
-      return data as QuoteRow[];
+      return data as unknown as (QuoteRow & { quotation: Quotation | null })[];
     },
   });
 
   const rows = quotes.data ?? [];
   const shown = useMemo(() => filterQuotes(rows, q, status, service), [rows, q, status, service]);
 
+  const history = useMemo(() => rateHistory(rows.map((r) => r.quotation)), [rows]);
+  const insights = useMemo(() => serviceInsights(rows), [rows]);
+  async function saveQuotation(id: string, quotation: Quotation) {
+    const { error } = await supabase.from("quote_requests").update({ quotation: quotation as never }).eq("id", id);
+    if (error) throw error;
+    qc.invalidateQueries({ queryKey: ["quotes"] });
+  }
   async function setRow(id: string, patch: { status?: string; notes?: string }) {
     await supabase.from("quote_requests").update(patch).eq("id", id);
     qc.invalidateQueries({ queryKey: ["quotes"] });
@@ -139,6 +148,15 @@ function Dashboard() {
         </div>
       </section>
 
+      <section className="rounded-lg border bg-card p-4">
+        <h2 className="mb-2 font-medium text-foreground">Pricing insights from your quotations</h2>
+        {insights.length === 0 ? <p className="text-sm text-muted-foreground">Open a client below and build a quotation — averages per service will appear here.</p> : (
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">{insights.map((i) => (
+            <div key={i.service} className="rounded-md border p-3"><p className="text-xs text-muted-foreground">{i.service}</p><p className="font-serif text-xl text-foreground">{naira(i.average)}</p><p className="text-xs text-muted-foreground">avg of {i.quotes} quotation{i.quotes > 1 ? "s" : ""} · {i.won} won</p></div>
+          ))}</div>
+        )}
+      </section>
+
       <section className="flex flex-col gap-2 sm:flex-row">
         <Input placeholder="Search name, phone, email, location…" value={q} onChange={(e) => setQ(e.target.value)} />
         <select aria-label="Status" className="h-10 rounded-md border bg-background px-3 text-sm" value={status} onChange={(e) => setStatus(e.target.value)}>
@@ -175,6 +193,7 @@ function Dashboard() {
                   className="w-full rounded-md border bg-background p-2"
                   onBlur={(e) => e.target.value !== (r.notes ?? "") && setRow(r.id, { notes: e.target.value })}
                 />
+                <QuotationBuilder row={r} history={history} onSave={(qt) => saveQuotation(r.id, qt)} />
               </div>
             )}
           </article>

@@ -52,7 +52,7 @@ export function rateHistory(quotations: (Quotation | null | undefined)[]) {
 }
 
 /** Average quoted total and count per service, for pricing insight. */
-export function serviceInsights(rows: { service: string; status: string; quotation: Quotation | null }[]) {
+export function serviceInsights(rows: { service: string; status: string; quotation?: Quotation | null }[]) {
   const m = new Map<string, { total: number; n: number; won: number }>();
   for (const r of rows) {
     if (!r.quotation?.items?.length) continue;

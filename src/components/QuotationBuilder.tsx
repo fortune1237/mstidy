@@ -6,7 +6,7 @@ import type { QuoteRow } from "@/lib/quote-stats";
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
-export function QuotationBuilder({ row, history, onSave }: { row: QuoteRow & { quotation: Quotation | null }; history: Map<string, number>; onSave: (q: Quotation) => Promise<void> }) {
+export function QuotationBuilder({ row, history, onSave }: { row: QuoteRow; history: Map<string, number>; onSave: (q: Quotation) => Promise<void> }) {
   const [q, setQ] = useState<Quotation>(() => row.quotation ?? emptyQuotation(row.service));
   const [saving, setSaving] = useState(false);
   const [msg, setMsg] = useState("");

@@ -14,6 +14,7 @@ export type QuoteRow = {
   description: string;
   status: string;
   notes: string | null;
+  quotation?: import("./quotation").Quotation | null;
 };
 
 export function filterQuotes(rows: QuoteRow[], q: string, status: string, service: string) {

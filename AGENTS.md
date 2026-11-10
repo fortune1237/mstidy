@@ -15,3 +15,4 @@
 - Non-authentic portfolio imagery and scenarios must be explicitly labelled illustrative and never represented as completed client work.
 
 - Owner dashboard (/dashboard) reads quote_requests from the browser under RLS; only users with the admin role in user_roles can read/update, and admin is auto-granted by a trigger when the owner business email is confirmed — keeps enquiries private without server-side admin reads.
+- Admin quotation builder stores each client's quotation as JSON on the quote request row (RLS admin update) — keeps quotes beside the enquiry with no extra table.
